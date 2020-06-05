@@ -1,7 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+#define SIGNATURE 0x504b0304
+#define OTHER_SIG 0x04034b50 //???
 
 typedef struct zipMeta {
-	const long signature;	// = 0x504b0304; //4 bytes constant
+	long signature;			// = 0x504b0304; //4 bytes constant
 	short version;			// 2 bytes
 	short flags;			// 2 bytes
 	short compression;		// 2 bytes
@@ -14,6 +18,6 @@ typedef struct zipMeta {
 	long extraFieldLen;		// 4bytes, length of extra field
 	char* fileName;			// fileNameLen size. all slashes should be forward '/'
 	short* extraField;		// extraFieldLen size. 2byte headers followed by 2 byte data.
-} zipMeta; 
+} zipMeta;
 
-void readZip(FILE*);
+int readZip(FILE*);

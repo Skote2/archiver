@@ -13,11 +13,12 @@ int main (int argc, char* argv[]) {
 		printf("Reading zip: %s\n", filename);
 		
 		fp = fopen(filename, mode);
-		readZip(fp);
+		err = readZip(fp);
 		err = fclose(fp); 
-		if (err != 0)
+		if (err != 0){
 			if (err == EOF)	printf("Error EOF on file close.\n");
 			else		printf("Error closing file.\n");
+		}
 		
 		argn++;
 	}

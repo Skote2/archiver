@@ -1,8 +1,12 @@
-CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
+CMakeFiles/
+
 obj/
 lib/
+
 *.o
 *.a
+*.zip
+
 archiver

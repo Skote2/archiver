@@ -1,6 +1,6 @@
 #IDIR =../include
 CC=gcc
-CFLAGS=#-I$(IDIR)
+CFLAGS=-Wall#-I$(IDIR)
 
 ODIR=../obj
 LDIR=../lib
@@ -21,4 +21,4 @@ archiver: $(OBJ)
 .PHONY: clean
 
 clean:
-	rm -f ./$(ODIR)/*.o ./*~ ./core ./$(IDIR)/*~ 
+	rm -f ./$(ODIR)/*.o ./*~ ./core ./$(IDIR)/*~ archiver
