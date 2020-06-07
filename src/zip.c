@@ -13,8 +13,8 @@ zipMeta* readMeta(FILE* fp) {
     zipM->signature = 0;
     fread(&zipM->signature, 4, 1, fp);
 
-    if (zipM->signature == OTHER_SIG) printf("Validated header signature.\n");
-    else if (zipM->signature == OTHER_SIG) printf("Validated header to other signature.\n");
+    if (zipM->signature == SIGNATURE) printf("Validated header signature.\n");
+    else if (zipM->signature == SIGNATURE) printf("Validated header to other signature.\n");
     else {
         printf("Failed to validate signature.\n");
         return NULL;
